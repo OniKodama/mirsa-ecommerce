@@ -1,32 +1,39 @@
+import MenuIcon from '@mui/icons-material/Menu';
 import CartWidget from '../CartWidget/CartWidget'
 import './Navbar.scss'
+import {Link} from 'react-router-dom'
 
-const Navbar = () => {
+const Navbar = ({setMenuOpen, menuOpen}) => {
   return (
     <div className = "navbar">
-      <div className="wrapper">
+      <div className= 'wrapper'>
         <div className="left">
-          <div className="item">
-            <a className = "link">Women</a>
+          <div className = 'hamburguerContainer'>
+            <div className= 'hamburguer' onClick = {() =>setMenuOpen(!menuOpen)}>
+              <MenuIcon />
+            </div>
           </div>
           <div className="item">
-            <a href = "#" className = "link" >Men</a>
+            <Link to = {`/category/women`} className='link'>Women</Link>
+          </div>
+          <div className="item">
+            <Link to = {`/category/men`} className='link'>Men</Link>
           </div>
         </div>
     
         <div className="center">
-          <a href = "#" className = "link">MIRSA</a>
+          <Link to = '/' className='link'>MIRSA</Link>
         </div>
 
         <div className="right">
-          <div className="">
-            <a href = "#" className = "link" to = "/item">Homepage</a>
+          <div className="rightItems">
+          <Link className='link' to = '/'>Homepage</Link>
           </div>
-          <div className="">
-            <a href = "#" className = "link" to = "/item">About</a>
+          <div className="rightItems">
+            <Link className='link' to = 'https://www.whatsapp.com/'>Contact</Link>
           </div>
           <div className="icons">
-            <CartWidget />
+            <a href='#cart' target="_blank"><CartWidget /></a>
           </div>
         </div>
       </div>

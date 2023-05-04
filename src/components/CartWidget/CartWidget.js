@@ -4,7 +4,7 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 const CartWidget = () => {
   return (
     <div className="cartIcon">
-        <ShoppingCartOutlinedIcon/>
+        <ShoppingCartOutlinedIcon style={{textDecoration: 'none', color: 'black'}}/>
         <span>2</span>
      </div>
   )

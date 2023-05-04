@@ -1,33 +1,69 @@
+@import '../../Respposive.scss';
+
 .navbar {
     height: 80px;
-
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+    
     .wrapper {
         padding: 10px 30px;
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        .item {
-            display: flex;
-            align-items: center;
-            font-size: 18px;
-        }
         .left{
             display: flex;
             align-items: center;
             gap: 25px;
+            
+            .item {
+                display: flex;
+                align-items: center;
+                font-size: 18px;
+
+                @include mobile {
+                    display: none;
+                }
+            }
+            .hamburguerContainer {
+                .hamburguer {
+                    font-size: 35px;
+                    cursor: pointer;
+                    
+                      :hover {
+                        transform: scale(0.92);
+                      }
+                    }
+                
+            }
         }
         .center{
             font-size: 30px;
             letter-spacing: 2px;
+
+            .link {
+                text-decoration: none;
+                color: black;
+            }
         }
         .right{
             display: flex;
             align-items: center;
             gap: 25px;
 
+            .rightItems {
+                @include mobile {
+                    display: none;
+                }
+            }
             .icons{
                 display: flex;
+                font-size: inherit;
+                color: inherit;
+                text-decoration: none;
                 cursor: pointer;
             }
         }

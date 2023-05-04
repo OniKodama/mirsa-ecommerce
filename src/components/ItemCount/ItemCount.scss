@@ -1,0 +1,56 @@
+.itemCount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    .buttonContainer {
+        height: 30%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .counterButtons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            button {
+                padding: 5px 10px;
+                background-color: inherit;
+                border: none;
+                font-size: 30px;
+                cursor: pointer;
+            }
+            h4 {
+                font-size: 20px;
+            }
+        }
+    }
+    .buttonsContainer {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+            .addButton {
+                border-radius: 30px;
+                border: none;
+                margin-bottom: 10px;
+                padding: 10px 10px;
+                background-color: #8dbdcf;
+                cursor: pointer;
+        
+                &:hover {
+                background-color: #AFDCEB;
+                transform: scale(1.02);
+                font-weight: 500;
+                }
+            }
+        
+    }
+}

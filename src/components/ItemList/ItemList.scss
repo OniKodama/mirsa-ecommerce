@@ -1,0 +1,17 @@
+@import '../../Respposive.scss';
+
+.cardList {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin-top: 30px;
+    gap: 15px;
+    flex-wrap: wrap;
+
+    @include mobile {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+}

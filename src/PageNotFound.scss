@@ -1,0 +1,26 @@
+.notFound {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .errorTitle {
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    .errorImg {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 500px;
+        height: 300px;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
