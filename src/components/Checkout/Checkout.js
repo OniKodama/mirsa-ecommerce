@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import CheckoutForm from '../Checkout/Checkout'
+import CheckoutForm from '../CheckoutForm/CheckoutForm'
 import {db} from '../../services/firebase/firebaseConfig'
 import { CartContext} from '../context/CartContext'
 import { collection, documentId, getDocs, query, where, writeBatch, addDoc } from 'firebase/firestore'
@@ -19,8 +19,7 @@ const Checkout = () => {
           name, phone, email
         },
         items: cart,
-        total: total,
-        /* date: Timestamp.fromDate(new Date()) */
+        total: total
       }
       const batch = writeBatch(db)
 
@@ -71,7 +70,6 @@ const Checkout = () => {
   }
    return (
     <div className='checkoutContainer'>
-      <h1>Checkout</h1>
       <CheckoutForm onConfirm = {createOrder}/>
     </div>
   )

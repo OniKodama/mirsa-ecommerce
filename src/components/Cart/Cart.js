@@ -1,12 +1,34 @@
 import { useContext } from 'react'
-import './Cart.scss'
 import { CartContext } from '../context/CartContext'
+import './Cart.scss'
 import {Link} from 'react-router-dom'
-
+import { collection,getDocs, addDoc, getFirestore} from 'firebase/firestore'
 
 const Cart = () => {
     const {cart, clearCart,removeItem, getTotal} = useContext(CartContext)
 
+    const order = {
+        buyer: {
+            name: "Pepe",
+            email: "pepe@gmail.com",
+            phone: "123"
+        },
+        items: cart.map(product => (
+            {
+                id: product.id,
+                title: product.title,
+                price: product.price,
+                quantity: product.quantity
+            }
+        )) 
+    }
+      const handleClick = () => {
+        const db = getFirestore()
+        const orderCollection = collection(db, 'orders')
+        addDoc(orderCollection,order)
+         .then(({id}) => console.log(id))
+    }
+    
   return cart.length > 0 ? (
     <div className = 'cartContainer'>
         {
@@ -22,8 +44,8 @@ const Cart = () => {
         }
         <h2>Total: {getTotal()}</h2>
         <div className='buttonsContainer'>
-            <Link to = "/checkout" className = "button"><button className = "button">Finish Purchase</button></Link>
-            <button onClick={()=>clearCart()}>Clear Cart</button>
+            <Link to = "/checkout" className = "button">Finish Purchase</Link>
+            <button className='button' onClick={()=>clearCart()}>Clear Cart</button>
         </div>
     </div>
   ) : (

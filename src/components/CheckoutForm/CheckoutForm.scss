@@ -1,0 +1,95 @@
+@import '../../Respposive.scss';
+
+.container {
+    width: 100%;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    h1 {
+        font-size: 42px;
+        margin-bottom: 15px;
+        font-weight: normal;
+    }
+    .form {
+        height: 55%;
+        width: 30%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow:  10px 11px 50px -2px rgba(0,0,0,0.58);
+        -webkit-caja-sombra: 10px 11px 50px -2px rgba(0,0,0,0.58);
+        -moz-caja-sombra: 10px 11px 50px -2px rgba(0,0,0,0.58);
+
+        .input-field {
+            position: relative;
+
+            input {
+                width: 300px;
+                height: 60px;
+                border-radius: 6px;
+                font-size: 18px;
+                padding: 0 15px;
+                border: 2px solid black;
+                background-color: transparent;
+                color: black;
+                outline: none;
+            }
+            input:focus ~label {
+                top: 0;
+                left: 15px;
+                font-size: 16px;
+                padding: 0 2px;
+                transform: translateY(-85%);
+                background: inherit;
+            }
+
+            label {
+                position: absolute;
+                top: 50%;
+                left: 15px;
+                transform: translateY(-50%);
+                color: black;
+                font-size: 19px;
+                pointer-events: none;
+            }
+        }
+        .submit {
+            button {
+                font-size: 20px;
+                font-weight: normal;
+                border-radius: 30px;
+                border: none;
+                text-decoration: none;
+                color: black;
+                margin-bottom: 10px;
+                padding: 5px 10px;
+                background-color: #8dbdcf;
+                cursor: pointer;
+                
+                &:hover {
+                    background-color: #AFDCEB;
+                    transform: scale(1.02);
+                    font-weight: 500;
+                }
+            }
+        }
+        @include mobile {
+            width: 300px;
+
+            .input-field {
+                position: relative;
+
+                input {
+                    width: 180px;
+                    height: 35px;
+                }
+            }
+        }
+    }
+}

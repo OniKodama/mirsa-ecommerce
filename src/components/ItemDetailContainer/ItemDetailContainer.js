@@ -1,6 +1,5 @@
 import { useEffect,useState } from 'react'
 import './ItemDetailContainer.scss'
-import { getProductById } from '../../data'
 import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
 
@@ -30,13 +29,6 @@ const ItemDetailContainer = () => {
             .finally(()=>{
                 setLoading(false)
             })
-        /* getProductById(itemId)
-        .then(response=>{
-            setProduct(response)
-        })
-        .catch(err=>{
-            console.log(err)
-        }) */
     },[itemId])
   return (
     <div className='itemDetailContainer'>

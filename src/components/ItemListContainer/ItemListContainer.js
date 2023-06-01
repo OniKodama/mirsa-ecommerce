@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import CardList from '../ItemList/ItemList'
 import './ItemListContainer.scss'
-import {getProducts, getProductByCategory} from '../../data'
 import { useParams } from 'react-router-dom'
 import Loading from '../Loading/Loading'
 
