@@ -1,7 +1,22 @@
 import './ItemDetail.scss'
 import ItemCount from '../ItemCount/ItemCount'
+import { useContext, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { CartContext } from '../context/CartContext'
 
 const ItemDetail = ({id,title,img,price,description, stock}) => {
+    const [goToCart, setGoToCart] = useState(false)
+
+    const {addItem} = useContext(CartContext)
+
+    const onAdd = (quantity) => {
+        setGoToCart(true)
+
+        const item = {
+            id,title,price, img, description
+        }
+        addItem(item,quantity)
+    }
   return (
     <div className='detailContainer'>
         <div className='left'>
@@ -26,7 +41,11 @@ const ItemDetail = ({id,title,img,price,description, stock}) => {
                         Stock: {stock}
                     </div>
                     <div className='buttonsDetails'>
-                        <ItemCount id = {id} stock = {stock} initial = {1}/>
+                        {goToCart  ? (
+                            <Link to = "/cart" className='finish'><button className='finish'>Finish Purchase</button></Link>
+                        ) : 
+                            <ItemCount id = {id} stock = {stock} initial = {1} onAdd = {onAdd}/>
+                        }
                     </div>
                 </div>
         </div>

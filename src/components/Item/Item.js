@@ -13,16 +13,15 @@ const Item = ({id,title,img,price,description, stock,itemId}) => {
                 <img className = 'img' src = {img} alt = {description}/>
             </div>
             <h3 className='stock'>Stock: {stock}</h3>
-            <div className='countersbutton'>
+            {/* <div className='countersbutton'>
                 <ItemCount stock = {stock} initial = {1}/>
-            </div>
+            </div> */}
             <div className='detailButton'>
               <Link to = {`/item/${id}`}>
                 <button>View More Details</button>
               </Link>
             </div>
         </div>
-        
     </div>
   )
 }

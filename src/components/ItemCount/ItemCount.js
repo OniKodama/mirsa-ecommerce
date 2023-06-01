@@ -2,30 +2,28 @@ import './ItemCount.scss'
 import { useState } from 'react'
 
 
-const ItemCount = ({id,stock, initial}) => {
-    const [counter, setCounter] = useState(initial)
+const ItemCount = ({id,stock, initial, onAdd}) => {
+    const [quantity, setQuantity] = useState(initial)
     
-    const onAdd = () => {
-      console.log(counter)
-    }
     const decreaseValue = () => {
-      setCounter(counter > initial ? counter - 1 : counter)
+      setQuantity(quantity > initial ? quantity - 1 : quantity)
     }
     const increaseValue = () => {
-      setCounter(counter < stock ? counter + 1 : counter)
+      setQuantity(quantity < stock ? quantity + 1 : quantity)
     }
+
   return (
     <div className='itemCount'>
       <div className='buttonContainer'>
         <div className='counterButtons'>
           <button onClick={()=>decreaseValue()}>-</button>
-          <h4>{counter}</h4>
+          <h4>{quantity}</h4>
           <button onClick={()=>increaseValue()}>+</button>
         </div>
       </div>
       <div className='buttonsContainer'>
         <div>
-          <button className='addButton' onClick={()=>onAdd()}>Add to Cart</button>
+          <button className='addButton' onClick={()=>onAdd(quantity)} disabled = {!stock}>Add to Cart</button>
         </div>
         </div>
     </div>

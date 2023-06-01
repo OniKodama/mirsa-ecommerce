@@ -1,19 +1,26 @@
 @import '../../Respposive.scss';
 
 .detailContainer {
-    height: 600px;
+    height: 700px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     @include mobile {
-        height: 100%;
+        height: 50%;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
+
+        .right {
+            height: 40%;
+            .desc{
+                font-size: 24px;
+            }
+        }
     }
 
     .left {
@@ -69,8 +76,6 @@
             flex-direction: column;
             gap: 20px;
 
-            
-            
             .desc {
                 font-size: 30px;
                 font-weight: 400;
@@ -102,6 +107,21 @@
             .buttonsDetails {
                 margin-top: 15px;
                 gap: 15px;
+
+                .finish{
+                    border-radius: 30px;
+                    border: none;
+                    margin-bottom: 10px;
+                    padding: 10px 10px;
+                    background-color: #8dbdcf;
+                    cursor: pointer;
+            
+                    &:hover {
+                    background-color: #AFDCEB;
+                    transform: scale(1.02);
+                    font-weight: 500;
+                }
+                }
             }
          }
     }

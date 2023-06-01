@@ -2,12 +2,13 @@
 
 .itemListContainer {
     width: 100%;
-    height: 50vw;
+    height: 40vw;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     flex-wrap: wrap;
+    
 
     h1 {
         font-size: 28px;
@@ -16,6 +17,6 @@
     }
 
     @include mobile {
-        height: 210vh;
+        height: 200vh;
     }
 }

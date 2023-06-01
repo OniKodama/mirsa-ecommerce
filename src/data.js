@@ -1,4 +1,4 @@
-const products = [
+/* const products = [
     {
         id: '1',
         title: "Cammo T-Shirt",
@@ -31,20 +31,20 @@ export const getProducts = () => {
     return new Promise ((resolve)=>{
         setTimeout(()=> {
             resolve(products)
-        },300)
+        },1500)
     })
 }
 export const getProductById = (productId) => {
     return new Promise ((resolve)=>{
         setTimeout(()=>{
             resolve(products.find(prod => prod.id === productId))
-        },300)
+        },1500)
     })
 }
 export const getProductByCategory = (categoryId) => {
     return new Promise ((resolve)=>{
         setTimeout(()=>{
             resolve(products.filter(prod => prod.category === categoryId))
-        },300)
+        },1500)
     })
-}
+} */

@@ -1,7 +1,7 @@
 import MenuIcon from '@mui/icons-material/Menu';
 import CartWidget from '../CartWidget/CartWidget'
 import './Navbar.scss'
-import {Link} from 'react-router-dom'
+import {NavLink, Link} from 'react-router-dom'
 
 const Navbar = ({setMenuOpen, menuOpen}) => {
   return (
@@ -17,7 +17,7 @@ const Navbar = ({setMenuOpen, menuOpen}) => {
             <Link to = {`/category/women`} className='link'>Women</Link>
           </div>
           <div className="item">
-            <Link to = {`/category/men`} className='link'>Men</Link>
+            <NavLink to = {`/category/men`} className='link'>Men</NavLink>
           </div>
         </div>
     
