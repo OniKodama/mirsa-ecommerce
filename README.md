@@ -68,3 +68,22 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Nombre del autor: Julian Sanchez
+Nombre de la aplicacion: Mirsa
+Tipo de aplicacion: E-commerce
+
+Breve Descripcion: Se trata de una tienda de ropa para hombres y mujeres, se muestran tres productos, (dos femeninos, uno masculino).
+El usuario podra elegir los productos que quiera, ver el estado de los productos antes de finalizar la compra, si desea eliminar un producto o limpiar
+completamente el carrito lo podra hacer con dos botones para cada accion respectivamente. Al finalizar esto, se le pedira sus datos, Nombre-Numero de Telefono e Email 
+para brindarle una id de compra.
+
+Frameworks utilizados:
+
+HTML
+JAVASCRIPT
+REACT JS (react-router-dom)
+MATERIAL UI (mui icons)
+SASS
+FIREBASE
+

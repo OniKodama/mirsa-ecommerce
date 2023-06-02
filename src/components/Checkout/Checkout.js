@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import {Link} from 'react-router-dom'
 import CheckoutForm from '../CheckoutForm/CheckoutForm'
 import {db} from '../../services/firebase/firebaseConfig'
 import { CartContext} from '../context/CartContext'
@@ -8,7 +9,7 @@ const Checkout = () => {
   const [loading, setLoading] = useState(false)
   const [orderId, setOrderId] = useState('')
 
-  const {cart, total, clearCart} = useContext(CartContext)
+  const {cart, getTotal, clearCart} = useContext(CartContext)
 
   const createOrder = async ({name, phone, email}) => {
     setLoading(true)
@@ -19,7 +20,7 @@ const Checkout = () => {
           name, phone, email
         },
         items: cart,
-        total: total
+        total: getTotal(),
       }
       const batch = writeBatch(db)
 
@@ -63,10 +64,11 @@ const Checkout = () => {
     }
   }
   if(loading) {
-    return <h1>Se esta cargando su orden...</h1>
-  }
-  if(orderId){
-    return <h1>Su numero de orden es: {orderId}</h1>
+    return( 
+    <div style={{width: '100%',height: '70px',display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}>
+      <h1 style={{fontSize: '30px', fontWeight: '300'}}>Your order number is: {orderId}</h1>
+    </div>
+    )
   }
    return (
     <div className='checkoutContainer'>
