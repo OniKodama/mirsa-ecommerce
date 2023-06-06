@@ -34,15 +34,7 @@ const ItemListContainer = ({greeting}) => {
         .finally(()=> {
           setLoading(false)
         })
-    /* const singleItemList = categoryId ? getProductByCategory : getProducts */
     
-    /* singleItemList(categoryId)
-      .then(response => {
-        setProducts(response)
-      })
-      .catch(err => {
-        console.log(err)
-      }) */
   },[categoryId])
   return (
     <>

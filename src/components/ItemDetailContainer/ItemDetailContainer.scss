@@ -9,6 +9,9 @@
     overflow: hidden;
 
     @include mobile {
-        height: 100vh;
+        height: 130vh;
+    }
+    @include min-mobile {
+        height: 130vh;
     }
 }

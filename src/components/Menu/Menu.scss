@@ -26,12 +26,10 @@
           transform: scale(0.99);
         }
         @include mobile {
-          margin-top: -285px;
+          margin-top: -280px;
           margin-left: -115px;
         }
-        
       }
-      
     }
   
     &.active {

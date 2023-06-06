@@ -1,7 +1,13 @@
 $width: 768px;
+$mn-width: 320px;
 
 @mixin mobile {
   @media (max-width: #{$width}) {
+    @content;
+  }
+}
+@mixin min-mobile {
+  @media (min-width: #{$mn-width}) {
     @content;
   }
 }
